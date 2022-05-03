@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Evolution Updater</string>
+
+    <!-- Company and production information -->
+    <string name="company_name_short">MessageNet</string>
+    <string name="company_name_long">MessageNet Systems</string>
+    <string name="company_name_full">MessageNet Systems, Inc.</string>
+    <string name="product_name">Connections Omni</string>
+    <string name="product_name_short">Omni</string>
+    <string name="support_email">support@MessageNetSystems.com</string>
+
+    <!-- Configure appearance of notification and what it says -->
+    <string name="notification_channelID">EvoUpdaterNotifChannel</string>
+    <string name="notification_title">Omni Update Manager</string>
+    <string name="notification_text_runningPID">Service active as process with ID #</string>
+    <string name="notification_text_updateReady">Update ready to install</string>
+    <string name="notification_text_updateDownloading">Update is downloading</string>
+    <string name="notification_text_updateDownloadRetrying">Update download retrying</string>
+    <string name="notification_text_updateDownloadFailed">Update download failed</string>
+    <string name="notification_text_updateDownloadCancelled">Update download cancelled</string>
+    <string name="notification_text_updateInstallationPrepare">Preparing to install update</string>
+    <string name="notification_text_updateInstallationUnderway">Installing update</string>
+    <string name="notification_text_updateInstallationFailed">Installation of update failed</string>
+
+    <!-- Network stuff -->
+    <integer name="socket_server_port">8081</integer>
+
+    <!-- Files and paths data -->
+    <string name="updateFileDownloadPath">/sdcard</string>
+    <string name="appDataPath_evolution">/data/user/0/com.messagenetsystems.evolution</string>
+    <string name="sharedPrefsFileSubdir_evolution">shared_prefs</string>
+    <string name="sharedPrefsFilename_evolution">com.messagenetsystems.evolution_preferences.xml</string>
+
+    <string name="sharedPrefsValueKey_serverIP">serverIPv4</string>                                 <!-- shared-prefs attribute name for server IP address -->
+    <string name="sharedPrefsValueKey_deviceID">thisDeviceID</string>                               <!-- shared-prefs attribute name for the Omni's device ID -->
+
+    <!-- Info about the apps that we're responsible for updating -->
+    <string name="appPackageName_evolution">com.messagenetsystems.evolution</string>
+    <string name="appPackageName_evolutionWatchdog">com.messagenetsystems.evolutionwatchdog</string>
+    <string name="appPackageName_evolutionUpdater">com.messagenetsystems.evolutionupdater</string>
+    <string name="appPackageName_evolutionFlasherLights">com.messagenetsystems.evolutionflasherlights</string>
+    <string name="appPackageName_omniWatchdogWatcher">com.messagenetsystems.omniwatchdogwatcher</string>
+    <string name="startupClass_evolution">StartupActivity</string>
+    <string name="startupClass_evolutionWatchdog">StartupActivity</string>
+    <string name="startupClass_evolutionUpdater">StartupActivity</string>
+    <string name="startupClass_omniWatchdogWatcher">StartupActivity</string>
+
+    <!-- Info about the apps' update-files -->
+    <string name="updatePackageServerPath">~silentm</string>                                        <!-- server web-root directory and path to APK symbolic links location -->
+    <string name="packageFilename_evolution">com.messagenetsystems.evolution.apk</string>           <!-- symbolic link name that the download-update routine knows to look for -->
+    <string name="packageFilename_evolutionWatchdog">com.messagenetsystems.evolutionwatchdog.apk</string>
+    <string name="packageFilename_evolutionUpdater">com.messagenetsystems.evolutionupdater.apk</string>
+    <string name="packageFilename_omniWatchdogWatcher">com.messagenetsystems.omniwatchdogwatcher.apk</string>
+    <string name="packageFileChecksumFile_evolution">com.messagenetsystems.evolution.md5</string>
+    <string name="packageFileChecksumFile_evolutionWatchdog">com.messagenetsystems.evolutionwatchdog.md5</string>
+    <string name="packageFileChecksumFile_evolutionUpdater">com.messagenetsystems.evolutionupdater.md5</string>
+    <string name="packageFileChecksumFile_omniWatchdogWatcher">com.messagenetsystems.omniwatchdogwatcher.md5</string>
+
+    <!-- Thread settings -->
+    <!-- NOTE: you should consider how accurate any time-window checking may be at various intervals... 60 seconds is probably best for most cases -->
+    <integer name="threadInitialWait_checkForUpdateDownload_seconds">5</integer>
+    <integer name="threadInterval_checkForUpdateDownload_seconds">60</integer>
+    <integer name="threadInitialWait_checkForUpdateInstall_seconds">35</integer>
+    <integer name="threadInterval_checkForUpdateInstall_seconds">60</integer>
+    <integer name="threadInitialWait_monitorThreads_seconds">50</integer>                           <!-- WARNING: This value should be higher than the initial wait value for any threads being monitored! -->
+    <integer name="threadInterval_monitorThreads_seconds">60</integer>                              <!-- WARNING: This value should be same or higher common multiple than interval value for any threads being monitored! -->
+
+    <!-- Time windows (must be in 24-hour time format) (values should be considered inclusive) -->
+    <!-- WARNING: download and installation windows should not overlap! -->
+    <string name="timeWindow_download_opens">0:00</string>  <!--0:00-->
+    <string name="timeWindow_download_closes">3:59</string> <!--3:59-->
+    <string name="timeWindow_install_opens">4:00</string>   <!--4:00-->
+    <string name="timeWindow_install_closes">4:59</string>  <!--4:59-->
+
+    <!-- Misc. -->
+    <integer name="backgroundDownload_maxRetries">100</integer>
+
+    <!-- Intent values -->
+    <string name="intentAction_triggerOmniUpdater">com.messagenetsystems.triggerOmniUpdater</string>    <!--original attempt for UpdateRequestReceiver / UpdatingActivity -->
+    <string name="intentAction_triggerOmniUpdater_getUpdatesBackground">com.messagenetsystems.triggerOmniUpdater.getUpdatesBackground</string>
+    <string name="intentAction_triggerOmniUpdater_applyUpdates">com.messagenetsystems.triggerOmniUpdater.applyUpdates</string>
+    <string name="intentAction_triggerOmniUpdater_stopGettingUpdatesBackground">com.messagenetsystems.triggerOmniUpdater.stopGettingUpdatesBackground</string>
+
+    <!-- Bundle keys -->
+    <string name="bundle_keyname_command">bundle_keyname_command</string>
+    <string name="bundle_command_updateDownloadProgress">bundle_command_updateDownloadProgress</string>
+    <string name="bundle_command_notifyDownloadComplete">bundle_command_notifyDownloadComplete</string>
+    <string name="bundle_command_startThread">bundle_command_startThread</string>
+    <string name="bundle_keyname_progressInt">bundle_keyname_progressInt</string>
+    <string name="bundle_keyname_threadName">bundle_keyname_threadName</string>
+
+</resources>
